@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.js": "/reacttest/static/js/main.ad3d94d4.js",
-    "index.html": "/reacttest/index.html",
-    "main.ad3d94d4.js.map": "/reacttest/static/js/main.ad3d94d4.js.map"
+    "main.js": "/SklepOnlineV3/static/js/main.ad3d94d4.js",
+    "index.html": "/SklepOnlineV3/index.html",
+    "main.ad3d94d4.js.map": "/SklepOnlineV3/static/js/main.ad3d94d4.js.map"
   },
   "entrypoints": [
     "static/js/main.ad3d94d4.js"
