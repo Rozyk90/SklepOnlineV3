@@ -25,7 +25,7 @@ export default function MessagesList() {
   };
 
   return (
-    <Box sx={{ mb: 2, mx: "auto"}}>
+    <Box sx={{ mb: 2, mx: "auto" }}>
       <Typography variant="h4" component="h2" align="center" sx={{ my: 5 }}>
         Lista wiadomości
       </Typography>
@@ -51,15 +51,25 @@ export default function MessagesList() {
               aria-controls="messageList"
               id={`basketHistory${obj.id}`}
             >
-              <Typography
-                sx={{ fontWeight: "bold", width: "33%", flexShrink: 0 }}
+              <Box
+                sx={{
+                  width: 1 / 1,
+                  display: "flex",
+                  justifyContent: "space-between",
+                }}
               >
-                {obj.date}
-              </Typography>
+                <Typography sx={{ m: 1, fontWeight: "bold" }}>
+                  {obj.date}
+                </Typography>
 
-              <Typography sx={{ fontWeight: "bold", color: "text.secondary" }}>
-                {obj.title}
-              </Typography>
+                <Typography sx={{ m: 1, fontWeight: "bold" }}>
+                  {obj.title}
+                </Typography>
+
+                <Typography sx={{ m: 1, fontWeight: "bold" }}>
+                  {obj.contact}
+                </Typography>
+              </Box>
             </AccordionSummary>
 
             <AccordionDetails>
