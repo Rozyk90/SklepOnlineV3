@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 // import { BrowserRouter } from "react-router-dom";
 import { HashRouter } from "react-router-dom";
@@ -11,8 +11,11 @@ import Navbar from "./components/navigation/navbar";
 import Modals from "./components/modal/modals";
 import Content from "./components/content/content";
 
+const ThemeContext = React.createContext({ theme: {} });
+export const useMyTheme = () => React.useContext(ThemeContext);
+
 function App() {
-  const themeDark = useSelector((state) => state.themeDark.themeDark);
+  const themeDark = useSelector((state) => state.themeDark);
   const dispatch = useDispatch();
 
   const darkTheme = createTheme({
@@ -36,7 +39,6 @@ function App() {
           <Modals />
 
           <Content />
-          
         </ThemeProvider>
       </HashRouter>
     </div>

@@ -1,4 +1,5 @@
 import React from "react";
+import { useEffect } from "react";
 
 import { useSelector, useDispatch } from "react-redux";
 
@@ -9,16 +10,28 @@ import IconButton from "@mui/material/IconButton";
 import { changeThemeDark } from "../../../../redux/slices/themeDark";
 
 const DarkMode = () => {
-  const themeDark = useSelector((state) => state.themeDark.themeDark);
+  const themeDark = useSelector((state) => state.themeDark);
   const dispatch = useDispatch();
+  const themeType = localStorage.getItem("theme");
+
+  const changeTheme = () => {
+    if (themeDark) {
+      localStorage.setItem("theme", "light");
+      dispatch(changeThemeDark());
+    } else {
+      localStorage.setItem("theme", "dark");
+      dispatch(changeThemeDark());
+    }
+  };
+
+  useEffect(() => {
+    const themeType = localStorage.getItem("theme");
+    if (themeType === "dark" && !themeDark) dispatch(changeThemeDark());
+  }, []);
 
   return (
-    <IconButton
-      sx={{ ml: 1 }}
-      onClick={() => dispatch(changeThemeDark())}
-      color="inherit"
-    >
-      {themeDark ? <Brightness7Icon /> : <Brightness4Icon />}
+    <IconButton sx={{ ml: 1 }} onClick={changeTheme} color="inherit">
+      {themeType === "dark" ? <Brightness7Icon /> : <Brightness4Icon />}
     </IconButton>
   );
 };
