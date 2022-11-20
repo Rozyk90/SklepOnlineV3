@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = [];
+const initialState = [{ id: 1, value: 5 }];
 
 export const basketSlice = createSlice({
   name: "basket",

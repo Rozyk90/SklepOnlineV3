@@ -33,10 +33,18 @@ const SingleCard = ({ id, value }) => {
   const setValue = (e) => {
     const inpValue = e.target.value;
 
-    if (inpValue >= 1) {
-      dispatch(basketChange({ id: id, newValue: inpValue }));
-    } else {
-      dispatch(basketChange({ id: id, newValue: 1 }));
+    const regex = /^[0-9]*$/g;
+    if (regex.test(inpValue)) {
+      if (
+        inpValue === "NaN" ||
+        inpValue === undefined ||
+        inpValue === null ||
+        inpValue === ""
+      ) {
+        dispatch(basketChange({ id: id, newValue: 0 }));
+      } else {
+        dispatch(basketChange({ id: id, newValue: parseInt(inpValue, 10) }));
+      }
     }
   };
 
@@ -92,7 +100,7 @@ const SingleCard = ({ id, value }) => {
         </Typography>
 
         <TextField
-          type="number"
+          // type="number"
           onChange={setValue}
           value={value}
           id={"basket-item" + id}
