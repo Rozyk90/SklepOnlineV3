@@ -75,8 +75,7 @@ const SingleCard = ({ id, value }) => {
           alignItems: "center",
         }}
       >
-        <Link
-          href="#"
+        <Link sx={{cursor:'pointer'}}
           color="inherit"
           underline="hover"
           onClick={() => {

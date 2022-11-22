@@ -66,7 +66,7 @@ const TableComponent = ({ list }) => {
               >
                 <TableCell component="th" scope="row">
                   <Link
-                    href="#"
+                    sx={{cursor:'pointer'}}
                     color="inherit"
                     underline="hover"
                     onClick={() => {

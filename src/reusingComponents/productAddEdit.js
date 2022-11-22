@@ -96,7 +96,6 @@ const ProductAddEdit = () => {
       rating: rating,
       count: Number(Math.floor(count)),
     };
-    console.log(product);
     return product;
   };
 
@@ -194,11 +193,18 @@ const ProductAddEdit = () => {
 
   const changeCount = (e) => {
     const inpValue = e.target.value;
-
-    if (inpValue >= 0) {
-      setCount(Number(inpValue));
-    } else {
-      setCount(0);
+    const regex = /^[0-9]*$/g;
+    if (regex.test(inpValue)) {
+      if (
+        inpValue === "NaN" ||
+        inpValue === undefined ||
+        inpValue === null ||
+        inpValue === ""
+      ) {
+        setCount(0);
+      } else {
+        setCount(parseInt(inpValue, 10));
+      }
     }
     setCountError(false);
     setCountErrorTxt("");
@@ -206,11 +212,14 @@ const ProductAddEdit = () => {
 
   const changePrice = (e) => {
     const inpValue = e.target.value;
-
-    if (inpValue >= 0) {
-      setPrice(Number(inpValue));
-    } else {
-      setPrice(0);
+    const badString = ["01", "02", "03", "04", "05", "06", "07", "08", "09"];
+    if (!inpValue.includes("-") || !inpValue.includes("-")) {
+      if (badString.includes(inpValue)) {
+        const a = inpValue.slice(1);
+        setPrice(a);
+      } else {
+        setPrice(Number(inpValue));
+      }
     }
     setPriceError(false);
     setPriceErrorTxt("");
@@ -291,8 +300,6 @@ const ProductAddEdit = () => {
           <TextField
             label="Ilość"
             id="productNewEditCatValue"
-            type="number"
-            min="0"
             error={countError}
             helperText={countErrorTxt}
             value={count}
