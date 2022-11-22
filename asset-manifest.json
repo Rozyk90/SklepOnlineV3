@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/SklepOnlineV3/static/js/main.3002126c.js",
+    "main.js": "/SklepOnlineV3/static/js/main.3b76e56b.js",
     "index.html": "/SklepOnlineV3/index.html",
-    "main.3002126c.js.map": "/SklepOnlineV3/static/js/main.3002126c.js.map"
+    "main.3b76e56b.js.map": "/SklepOnlineV3/static/js/main.3b76e56b.js.map"
   },
   "entrypoints": [
-    "static/js/main.3002126c.js"
+    "static/js/main.3b76e56b.js"
   ]
 }
