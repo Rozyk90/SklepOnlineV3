@@ -22,7 +22,7 @@ const Navbar = () => {
   const usersList = useSelector((state) => state.usersList);
 
   const pages = ["Home", "Produkty", "Koszyk", "Kontakt"];
-  const shopName = "sklepV3";
+  const shopName = "SklepOnlineV3";
 
   const adminTest = () => {
     const userObj =

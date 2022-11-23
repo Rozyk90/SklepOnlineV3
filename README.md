@@ -44,6 +44,10 @@ Start the server
 - Works on functionalities are completed
 - It plans to improve the accessibility of the application and adapt it to screen readers
 
+## Administrator account
+- Login: admin
+- Password: a
+
 ## Features
 
 - Light/dark mode toggle
